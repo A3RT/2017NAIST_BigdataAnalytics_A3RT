@@ -2,9 +2,10 @@
 ## 概要
 
 統計的機械学習や深層学習の技術は、ビジネスの現場でも盛んに活用されはじめてきています。実用的なシステムとして利用するには、学習モデルのテストデータにおける精度のみならず、頑健性や意図しない外れ値などへの対応、長期的な運用における精度の維持など、様々な側面からモデルを評価し構成していく必要があります。
-そうした機械学習モデルの頑健性を考える上で、特に深層学習で有名な例はIan Goodfellow, 2015によるAdversarial Exampleでしょう。以下の図にあるように、パンダの画像に少しのノイズを載せることにより、人間が見ればパンダの画像であると明らかに識別できる画像において、分類器が誤認識する画像を生成することに成功しています。
+そうした機械学習モデルの頑健性を考える上で、特に深層学習で有名な例は[Goodfellow et al. (2014)](https://arxiv.org/abs/1412.6572)によるAdversarial Exampleでしょう。以下の図にあるように、パンダの画像に少しのノイズを載せることにより、人間が見ればパンダの画像であると明らかに識別できる画像において、分類器が誤認識する画像を生成することに成功しています。
 
 ![img/goodfellow.png](img/goodfellow.png)
+[Goodfellow et al. (2014)](https://arxiv.org/abs/1412.6572)より引用
 
 このような取り組みは、NIPSにおいても["NIPS 2017: Non-targeted Adversarial Attack"](https://www.kaggle.com/c/nips-2017-non-targeted-adversarial-attack)のコンペティションとして出題されるなど、注目は高まりつつあります。
 
@@ -15,13 +16,20 @@
 ## 課題
 ### 課題1: データセットを探す
 
-二値/多値の分類問題として利用するデータセットを決めてください。研究用に公開されているものや、自身でクロールしたものなど、どのようなデータセットでも構いません。
+自然言語処理における二値/多値の分類問題として利用するデータセットを決めてください。研究用に公開されているものや、自身でクロールしたものなど、どのようなデータセットでも構いません。
 
 ただし、データセットは下記の条件を満たすものとしてください。
 
 - 日本語でも英語でも可（解釈のしやすさから日本語の方が良い）
 - データ行数はヘッダー行含め100行以上1万行以内
 - 各レコードのテキスト文字数は1000文字以内かつ500単語以内
+
+#### 例
+
+- [青空文庫　Aozora Bunko](http://www.aozora.gr.jp/)における著者推定
+  - [青空文庫作家別一括ダウンロード](http://keison.sakura.ne.jp/)
+- [言語処理100本ノック 2015](http://www.cl.ecei.tohoku.ac.jp/nlp100/) 8章で利用している[sentence polarity dataset v1.0](http://www.cs.cornell.edu/people/pabo/movie-review-data/rt-polaritydata.README.1.0.txt)の極性分析
+- [Home Page for 20 Newsgroups Data Set](http://qwone.com/~jason/20Newsgroups/)における記事のニュースグループ推定
 
 ### 課題2: ローカルで分類器を作成する
 
@@ -35,7 +43,7 @@
 
 ### 課題3: A3RT Classification APIで分類器を作成する
 
-課題1で用意したデータセットを用いて、[A3RT Classification API](https://a3rt.recruit-tech.co.jp/product/textClassificationAPI/)を使って分類器を作成してください。作成方法は公式のドキュメントおよびxxxを参考にしてください。
+課題1で用意したデータセットを用いて、[A3RT Classification API](https://a3rt.recruit-tech.co.jp/product/textClassificationAPI/)を使って分類器を作成してください。作成方法は公式のドキュメントおよび[参考資料](doc/A3RT_Usage.pdf)を参考にしてください。
 また、作成したAPIに対して、幾つかのリクエストを送付して、分類器がある程度正しく動作しているかを確認してください。
 
 ### 課題4: ローカルの分類器で騙せる例を探す
