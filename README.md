@@ -95,6 +95,12 @@ spam,FANTASTIC! TRUMPS 7 POINT PLAN To Reform Healthcare Begins With A Bombshell
 
 また、あなたが作成した分類器が例えばビジネスの現場で活用された際のリスクやその対策方法について自由に考察してください（こちらもスライド1枚程度）。
 
+### 課題7: Adversarial Exampleの自動生成(発展課題・任意)
+
+ローカルで作成した分類器に対して、指定した入力文から自動でAdversarial Exampleを作成するような方法/アルゴリズムを考えて下さい。それを実装の上、幾つかの入力文に対してAdversarial Exampleを自動作成し、アルゴリズムの妥当性や評価を行って下さい。
+
+アイデア：同義語や語彙平易化、単語ベクトル、Variational Autoencoder
+
 ## 注意点
 
 今回はA3RTのWeb APIを利用しますが、過度なリクエスト送信をしないように注意してください。幾つかの入力文をプログラムから送信して検証する際も、sleep等を入れて短時間にリクエストを集中させないような処理を入れて下さい。
