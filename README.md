@@ -5,7 +5,7 @@
 そうした機械学習モデルの頑健性を考える上で、特に深層学習で有名な例は[Goodfellow et al. (2014)](https://arxiv.org/abs/1412.6572)によるAdversarial Exampleでしょう。以下の図にあるように、パンダの画像に少しのノイズを載せることにより、人間が見ればパンダの画像であると明らかに識別できる画像において、分類器が誤認識する画像を生成することに成功しています。
 
 ![img/goodfellow.png](img/goodfellow.png)
-[Goodfellow et al. (2014)](https://arxiv.org/abs/1412.6572)より引用
+([Goodfellow et al. (2014)](https://arxiv.org/abs/1412.6572)より引用)
 
 このような取り組みは、NIPSにおいても["NIPS 2017: Non-targeted Adversarial Attack"](https://www.kaggle.com/c/nips-2017-non-targeted-adversarial-attack)のコンペティションとして出題されるなど、注目は高まりつつあります。
 
@@ -24,7 +24,20 @@
 - データ行数はヘッダー行含め100行以上1万行以内
 - 各レコードのテキスト文字数は1000文字以内かつ500単語以内
 
-#### 例
+#### データ形式の例
+データセットの形式は任意ですが、課題3で用いるデータ形式は以下のような形で1行目にヘッダー、2行目以下にlabelとtextが書かれたデータを用います。ここでは例として[Getting Real about Fake News | Kaggle](https://www.kaggle.com/mrisdal/fake-news)のデータセットを用いて、ニュースタイトルとそれがフェイクニュースかどうかを判別するためのデータセットを例示しています。
+
+```
+label,text
+not_spam,Muslims BUSTED: They Stole Millions In Gov’t Benefits
+not_spam,Re: Why Did Attorney General Loretta Lynch Plead The Fifth?
+not_spam,BREAKING: Weiner Cooperating With FBI On Hillary Email Investigation
+spam,FANTASTIC! TRUMPS 7 POINT PLAN To Reform Healthcare Begins With A Bombshell! » 100percentfedUp.com
+[...]
+```
+(https://www.kaggle.com/mrisdal/fake-news/data より)
+
+#### 用いるデータの例
 
 - [青空文庫　Aozora Bunko](http://www.aozora.gr.jp/)における著者推定
   - [青空文庫作家別一括ダウンロード](http://keison.sakura.ne.jp/)
